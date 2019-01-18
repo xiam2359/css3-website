@@ -8,11 +8,11 @@
        -3 option when hover/click info about the oppo
        [10% each]
 1+ css3 background or border property[ies] CHECK
-1+ gradient (linear and/or radial) 
+1+ gradient (linear and/or radial) CHECK
 1+ shadow (box or text) CHECK
-1+ transform (2D or 3D)
-1+ transition
-1+ animation
+1+ transform (2D or 3D) CHECK
+1+ transition CHECK
+1+ animation CHECK
 [10% proper comments] (anything not intuitive)
 [40% originality]
 40: completely original, 30: mostly original
@@ -29,7 +29,11 @@
 */  
     #background {
       background: url(sky.jpg);
-      height: 500px;
+      height: 700px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-attachment: fixed;
+      background-size: contain;
       opacity: .5;
     }
     header {
@@ -39,12 +43,32 @@
       text-shadow: 2px 2px 5px white;
     }
     box1 {
-      width: 500px;
-      height:100px;
-      padding: 20px;
-      margin: 20;
+      position: relative;
+      top:100px;
+      left: 30px;
+      padding: 40px;
       background-image: linear-gradient(mediumseagreen, lightblue);
-      border: 2px solid black;
+      border: solid blue;
+      color: blue;
+      font-family: Monospace, Helvetica, arial;
+      
+    }
+    box1:hover {
+      animation: opacity 2s;
+    }
+    @keyframes opacity {
+      from{color: green;}
+      to{color:black;}
+    }
+    #sun {
+      background-image: url(sun.png);
+      position: relative;
+      left:50px;
+      height: 50px;
+      transition: transform 2s;
+    }
+    #sun:hover {
+      transform: rotate(360deg);
     }
     
        
@@ -53,8 +77,9 @@
 </head>
 <body>
     <div id="background">
-      <header>Spend you summer here!</header>
-      <box1>helloshdusdhushudhuadhadhas</box1>
+      <img id="sun" src="sun.png">
+      <header>Spend you summer like this!</header>
+      <box1>Work, volunteer, and learn something new!</box1>
     </div>
     
 </body>
